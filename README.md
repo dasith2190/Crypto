@@ -1,2 +1,2 @@
 # Crypto
-# Crypto
+Digital currency application.
