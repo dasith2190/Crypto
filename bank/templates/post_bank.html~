@@ -1,0 +1,18 @@
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    //$("#form-sb").submit();
+});
+</script>
+
+<form action="/create" method="POST" id="form-sb">
+<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+	<input name="order_id" value="{{mes_id}}"/><br/>
+   {% for key, values in arr.items %}
+{{key}}
+	<input name="{{ key }}" value="{{ values }}"></br>
+   
+    {% endfor %}
+
+</form>
+

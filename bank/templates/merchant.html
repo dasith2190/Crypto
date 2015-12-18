@@ -1,0 +1,10 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" href="{% static 'css/test.css' %}">
+
+<form action="/check_sign" method="POST">
+<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+<input type="text" placeholder="Message" name="message" id="message"/><br/>
+<input type="text" placeholder="code" name="code" id="code"/><br/>
+<button id="testme">Validate</button>
+</form>

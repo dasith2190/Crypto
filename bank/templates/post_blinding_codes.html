@@ -1,0 +1,21 @@
+
+
+
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#form-sb").submit();
+});
+</script>
+
+<form action="/verify" method="POST" id="form-sb">
+<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+	<input name="order_id" value="{{mes_id}}"/><br/>
+	<input name="except" value="{{except}}"/><br/>
+   {% for key, values in codes.items %}
+		   {% for key2, value2 in values.items %}
+		<input name="{{ key }}_{{key2}}" value="{{ value2 }}"/>
+		   {% endfor %}<br/>
+    {% endfor %}
+
+</form>

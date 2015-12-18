@@ -1,0 +1,15 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" href="{% static 'css/test.css' %}">
+
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+
+<script src="{% static 'js/encrypt/bin/jsencrypt.js' %}"></script>
+
+<form action="/encrypt" method="POST">
+<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+<input type="text" placeholder="Message" name="message" id="message"/><br/>
+<input type="text" placeholder="SSN" name="account-nm" id="account-nm"/><br/>
+<input type="text" placeholder="Amount" name="amt" id="amt"/><br/>
+<button id="testme">Create Order</button>
+</form>

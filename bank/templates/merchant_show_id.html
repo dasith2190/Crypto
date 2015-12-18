@@ -1,0 +1,35 @@
+<h4>The money order is valid, please decrypt the following halves of the identity string. </h4>
+
+<form action="reveal_id" method="POST">
+<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+<input type="hidden" value="{{ message }}" name="msg"/>
+<input type="hidden" value="{{ code }}" name="code"/>
+<table>
+<tr>
+<th>Left</th>
+<th>Right</th>
+</tr>
+<tr>
+<td><input type="radio" name="L1" value="L0" required/></td>
+<td><input type="radio" name="L1" value="R0"/></td>
+</tr>
+<tr>
+<td><input type="radio" name="L2" value="L1" required/></td>
+<td><input type="radio" name="L2" value="R1"/></td>
+<tr>
+<tr>
+<td><input type="radio" name="L3" value="L2" required/></td>
+<td><input type="radio" name="L3" value="R2"/></td>
+</tr>
+<tr>
+<td><input type="radio" name="L4" value="L3" required/></td>
+<td><input type="radio" name="L4" value="R3"/></td>
+</tr>
+<tr>
+<td><input type="radio" name="L5" value="L4" required/></td>
+<td><input type="radio" name="L5" value="R4"/></td>
+</tr>
+
+</table>
+<button id="testme">Show ID</button>
+</form>
